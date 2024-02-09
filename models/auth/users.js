@@ -3,23 +3,27 @@ module.exports = (sequelize, Sequelize, types) => {
         "users", // tábla név
         {
             // mező lista
-            id:{
+            id: {
                 type: types.INTEGER,
                 autoIncrement: true,
                 primaryKey: true,
             },
 
-            username:{
+            email: {
                 type: types.STRING,
                 primaryKey: false,
             },
 
-            firstName:{
+            firstName: {
                 type: types.STRING,
                 primaryKey: false,
             },
 
-            lastName:{
+            lastName: {
+                type: types.STRING,
+                primaryKey: false,
+            },
+            password: {
                 type: types.STRING,
                 primaryKey: false,
             },
