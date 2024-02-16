@@ -22,8 +22,8 @@ export default function CreateAccountForm() {
 
   const onSubmit = useCallback(async (e) => {
     e.preventDefault();
-    const { email, password, firstName,lastName } = formData.current;
-    console.log(email,password,lastName,firstName)
+    const { email, password, firstName, lastName } = formData.current;
+    console.log(email, password, lastName, firstName)
     setLoading(true);
 
     const result = await createAccount(email, password, lastName, firstName);
