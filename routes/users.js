@@ -38,6 +38,23 @@ router.post('/', function (req, res, next) {
   CreateUser(req, res)
 });
 
+router.post('/login', async function (req, res, next) {
+
+  const { email, password } = req.body
+  const u = await db.Auth.User.findAll({
+    where: {
+      email: email
+    }
+  })
+
+  console.log(u)
+  if (u.length == 0) {
+    return res.status(400).json({ message: 'nincs ilyen felhasználó' })
+  }
+
+
+});
+
 router.delete('/', function (req, res, next) {
   res.json({ data: "user admin" });
 });
